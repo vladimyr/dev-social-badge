@@ -19,17 +19,45 @@
     "url": "https://github.com/BenjaminPrice/dev-social-badge"
   },
   "license": "MIT",
+  "jsdelivr": "./dist/dev-social-badge.js",
+  "unpkg": "./dist/dev-social-badge.js",
+  "module": "./dist/dev-social-badge.esm.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "lint": "eslint ."
+    "build": "rollup --config rollup.config.js",
+    "dev": "rollup --config rollup.config.dev.js --watch",
+    "lint": "eslint .",
+    "serve": "http-server -p 4000"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.8.4",
+    "@ungap/global-this": "^0.3.1",
+    "object-assign": "^4.1.1",
+    "pinkie-promise": "^2.0.1",
+    "xhr": "^2.5.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
+    "@rollup/plugin-commonjs": "^11.0.2",
+    "@rollup/plugin-node-resolve": "^7.1.1",
     "eslint": "^6.8.0",
     "eslint-config-semistandard": "^15.0.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-standard": "^4.0.1",
+    "http-server": "^0.12.1",
+    "rollup": "^1.31.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-delete": "^1.2.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-string": "^3.0.0",
+    "rollup-plugin-terser": "^5.2.0"
   },
   "authors": [
     "Benjamin Price <ben@benprice.dev>"

@@ -1,5 +1,6 @@
 'use strict';
 
 module.exports = {
-  extends: 'semistandard'
+  extends: 'semistandard',
+  env: { browser: true }
 };
