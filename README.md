@@ -1,57 +1,36 @@
 # DEV Social Badge
-<p align="left">
-<img alt="GitHub package.json version" src="https://img.shields.io/github/package-json/v/BenjaminPrice/dev-social-badge?style=flat-square"> <a href="CONTRIBUTING.md"><img alt="Contributions to DEV Widget are welcomed" src="https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square"></a>
-</p>
-Unofficial Social Badge for DEV.to
 
-A social badge that pulls your reaction count for an article that’s been shared on DEV
+![GitHub package.json
+version](https://img.shields.io/github/package-json/v/BenjaminPrice/dev-social-badge?style=flat-square)
+[![Contributions to DEV Widget are
+welcomed](https://img.shields.io/badge/contributions-welcome-brightgreen?style=flat-square)](CONTRIBUTING.md)
 
----
+Unofficial Social Badge for [DEV.to](https://dev.to/)
 
-## CDNJS
-
-Help me get this hosted on CDNJS by giving the repository a `star`. I require at least 800 stars to submit to CDNJS.
-
----
+A social badge that pulls your reaction count for an article that’s been shared
+on DEV.
 
 ## Installation and Usage
 
-### Adding the script tag to the HEAD
+Add script at the end of `<body>` after all `<devto-badge>` tags.
+
+_If you're using a template for your blog posts, I suggest adding this to the
+template file for your blog posts - not your main site layout._ This will help
+to reduce unnecessary API calls to [DEV.to](https://dev.to/).
 
 ```html
-    <!-- Place script tag before the end of the head tag -->
-    <script src="https://unpkg.com/dev-social-badge@0.1.0/dist/dev-social-badge.min.js"></script>
+<devto-badge data-article-url="https://dev.to/benjaminjprice/introducing-the-dev-social-badge-1bc3"></devto-badge>
+<script src="https://unpkg.com/dev-social-badge@0.1.0/dist/dev-social-badge.min.js"></script>
 ```
-
-### Adding the devbadge and script tags to the BODY
-_If you're using a template for your blog posts, I suggest adding this to the template file for your blog posts - not your main site layout._ This will help to reduce unnecessary API calls to [DEV.to](https://dev.to/).
-
-```html
-    <!-- Place devbadge tag wherever you'd like the badge to appear -->
-    <devbadge />
-    <!-- Place script tag before the end of the body tag -->
-    <script>window.onload = function(){typeof findOnDev !== "undefined" && findOnDev()}</script>
-```
-
----
-
-## Meta Tag Guide
-
-| attributes    | description                   | default                  | required                 | 
-|---------------|-------------------------------|--------------------------|--------------------------|
-| dev:username  | Your DEV.to Username          | N/A                      | true                     |
-
-Example of a meta tag:
-```html
-<meta name="dev:username" content="benjaminjprice" />
-```
----
 
 ## Changelog
+
 **[RELEASES](https://github.com/BenjaminPrice/dev-social-badge/releases)**
 
 ---
 
 ## Contributing
 
-I'm still getting things started. As such, there aren't any/many issues created yet. But, you can always checkout [CONTRIBUTING.md](CONTRIBUTING.md) for Contribution guidelines.
+I'm still getting things started. As such, there aren't any/many issues created
+yet. But, you can always checkout [CONTRIBUTING.md](CONTRIBUTING.md) for
+Contribution guidelines.
