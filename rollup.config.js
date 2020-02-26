@@ -33,6 +33,7 @@ const config = [
 ];
 
 const [firstConfig] = config;
+firstConfig.external = Object.keys(pkg.dependencies);
 firstConfig.plugins = firstConfig.plugins.concat(del({ targets: 'dist/* ' }));
 
 export default config;
