@@ -8,7 +8,7 @@ globalThis.Promise = globalThis.Promise || Promise;
 
 const prefixUrl = 'https://dev.to';
 
-[].map.call(document.querySelectorAll('devbadge'), el => initBadge(el));
+[].map.call(document.querySelectorAll('devto-badge'), el => initBadge(el));
 
 export async function initBadge (el) {
   const { articleUrl } = el.dataset;
