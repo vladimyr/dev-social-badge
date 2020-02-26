@@ -8,17 +8,18 @@ const { Promise } = globalThis;
 
 [].map.call(document.querySelectorAll('devto-badge'), el => initBadge(el));
 
-export async function initBadge (el) {
+export function initBadge (el) {
+  let articleId;
   const { articleUrl, target } = el.dataset;
-  const articleId = await getArticleId(articleUrl);
-  const articleInfo = await getArticleInfo(articleId);
-  const badge = createBadge({
-    articleId,
-    articleUrl,
-    target,
-    count: articleInfo.positive_reactions_count
-  });
-  return replace(el, badge);
+  return getArticleId(articleUrl)
+    .then(articleId => getArticleInfo(articleId))
+    .then(articleInfo => createBadge({
+      articleId,
+      articleUrl,
+      target,
+      count: articleInfo.positive_reactions_count
+    }))
+    .then(badge => replace(el, badge));
 }
 
 function createBadge ({ articleId, articleUrl, count, target = '_blank' }) {
@@ -40,16 +41,16 @@ function createBadge ({ articleId, articleUrl, count, target = '_blank' }) {
   return a;
 }
 
-async function getArticleId (url) {
-  const { body: doc } = await httpGet(url, { responseType: 'document' });
-  const article = doc.querySelector('[data-article-id]');
-  return article && article.getAttribute('data-article-id');
+function getArticleId (url) {
+  return httpGet(url, { responseType: 'document' })
+    .then(({ body: doc }) => doc.querySelector('[data-article-id]'))
+    .then(article => article && article.getAttribute('data-article-id'));
 }
 
-async function getArticleInfo (articleId) {
+function getArticleInfo (articleId) {
   const url = [prefixUrl, `/api/articles/${articleId}`].join('');
-  const { body: data } = await httpGet(url, { json: true });
-  return data;
+  return httpGet(url, { json: true })
+    .then(({ body: data }) => data);
 }
 
 function httpGet (url, options = {}) {

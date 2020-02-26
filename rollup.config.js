@@ -20,7 +20,7 @@ const baseConfig = {
     resolve({ preferBuiltins: true }),
     commonjs(),
     builtins(),
-    babel({ runtimeHelpers: true, exclude: 'node_modules/**' }),
+    babel({ exclude: 'node_modules/**' }),
     string({ include: '**/*.svg' })
   ]
 };
