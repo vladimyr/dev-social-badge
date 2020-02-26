@@ -20,7 +20,7 @@ to reduce unnecessary API calls to [DEV.to](https://dev.to/).
 
 ```html
 <devto-badge data-article-url="https://dev.to/benjaminjprice/introducing-the-dev-social-badge-1bc3"></devto-badge>
-<script src="https://unpkg.com/dev-social-badge@0.1.0/dist/dev-social-badge.min.js"></script>
+<script src="https://unpkg.com/dev-social-badge@0.1.0/dist/devto-badge.min.js"></script>
 ```
 
 ## Changelog

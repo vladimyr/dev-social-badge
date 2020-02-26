@@ -10,7 +10,7 @@ const config = {
   input: 'src/index.js',
   output: {
     format: 'iife',
-    name: 'DevSocialBadge',
+    name: 'DevtoBadge',
     exports: 'named',
     sourcemap: true,
     file: pkg.unpkg

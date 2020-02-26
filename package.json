@@ -19,9 +19,9 @@
     "url": "https://github.com/BenjaminPrice/dev-social-badge"
   },
   "license": "MIT",
-  "jsdelivr": "./dist/dev-social-badge.js",
-  "unpkg": "./dist/dev-social-badge.js",
-  "module": "./dist/dev-social-badge.esm.js",
+  "jsdelivr": "./dist/devto-badge.js",
+  "unpkg": "./dist/devto-badge.js",
+  "module": "./dist/devto-badge.esm.js",
   "files": [
     "dist"
   ],

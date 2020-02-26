@@ -12,7 +12,7 @@ import { terser } from 'rollup-plugin-terser';
 const baseConfig = {
   input: 'src/index.js',
   output: {
-    name: 'DevSocialBadge',
+    name: 'DevtoBadge',
     exports: 'named',
     sourcemap: true
   },
