@@ -3,8 +3,10 @@ import badge from './badge.svg';
 import globalThis from '@ungap/global-this';
 import xhr from 'xhr';
 
-const prefixUrl = 'https://dev.to';
 const { Promise } = globalThis;
+
+const prefixUrl = 'https://dev.to';
+const reArticleId = /article-id\s*=\s*"(\d+)"/;
 
 [].map.call(document.querySelectorAll('devto-badge'), el => initBadge(el));
 
@@ -42,9 +44,9 @@ function createBadge ({ articleId, articleUrl, count, target = '_blank' }) {
 }
 
 function getArticleId (url) {
-  return httpGet(url, { responseType: 'document' })
-    .then(({ body: doc }) => doc.querySelector('[data-article-id]'))
-    .then(article => article && article.getAttribute('data-article-id'));
+  return httpGet(url)
+    .then(({ body: html }) => html.match(reArticleId) || [])
+    .then(([_, articleId]) => articleId);
 }
 
 function getArticleInfo (articleId) {
