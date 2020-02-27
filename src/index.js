@@ -50,7 +50,7 @@ function getArticleId (url) {
 }
 
 function getArticleInfo (articleId) {
-  const url = [prefixUrl, `/api/articles/${articleId}`].join('');
+  const url = [prefixUrl, `/api/articles/${articleId}?t=${Date.now()}`].join('');
   return httpGet(url, { json: true })
     .then(({ body: data }) => data);
 }
