@@ -1,4 +1,4 @@
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import builtins from 'rollup-plugin-node-builtins';
 import commonjs from '@rollup/plugin-commonjs';
 import del from 'rollup-plugin-delete';
@@ -20,7 +20,7 @@ const baseConfig = {
     resolve({ preferBuiltins: true }),
     commonjs(),
     builtins(),
-    babel({ exclude: 'node_modules/**' }),
+    babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }),
     string({ include: '**/*.svg' })
   ]
 };
