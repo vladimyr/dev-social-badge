@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="20.857" width="57.719">
   <path d="M9.154 8.006c-.197-.147-.395-.221-.592-.221h-.885v5.305h.886c.197 0 .394-.074.591-.22.197-.148.296-.369.296-.664V8.669c0-.295-.1-.516-.296-.663zm-5.87-6.952a2.23 2.23 0 00-2.23 2.224v14.301a2.23 2.23 0 002.23 2.225h24.52V1.054zm7.6 11.162c0 .955-.59 2.402-2.455 2.399H6.072V6.213h2.406c1.8 0 2.405 1.445 2.406 2.4zm5.113-4.503h-2.706v1.951h1.654v1.502h-1.654v1.95h2.707v1.502H12.84a1.026 1.026 0 01-1.052-1V7.265a1.027 1.027 0 011-1.05h3.21zm5.263 5.855c-.67 1.561-1.871 1.25-2.409 0l-1.957-7.353h1.654l1.51 5.775 1.5-5.775h1.655z"/>
-  <text text-anchor="middle" dominant-baseline="middle" y="11.55" x="41.4" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700" font-stretch="condensed"/>
+  <text text-anchor="middle" dominant-baseline="middle" y="11.55" x="41.4" font-family="Helvetica Neue,Helvetica,Arial,sans-serif" font-size="12" font-weight="700"/>
   <path d="M4 1h49.72c1.661 0 3 1.338 3 3v12.857c0 1.662-1.339 3-3 3H4c-1.662 0-3-1.338-3-3V4c0-1.662 1.338-3 3-3z" fill="none" stroke="#000" stroke-width="2"/>
 </svg>
