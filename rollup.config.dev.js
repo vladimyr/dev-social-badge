@@ -2,7 +2,7 @@ import babel from '@rollup/plugin-babel';
 import builtins from 'rollup-plugin-node-builtins';
 import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
-import { string } from 'rollup-plugin-string';
+import svgo from 'rollup-plugin-svgo';
 import resolve from '@rollup/plugin-node-resolve';
 
 /** @type {import('rollup').RollupOptions} */
@@ -20,7 +20,13 @@ const config = {
     commonjs(),
     builtins(),
     babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }),
-    string({ include: '**/*.svg' })
+    svgo({
+      plugins: [
+        { removeViewBox: false },
+        { removeDimensions: false },
+        { removeEmptyText: false }
+      ]
+    })
   ]
 };
 

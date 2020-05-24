@@ -5,7 +5,7 @@ import del from 'rollup-plugin-delete';
 import path from 'path';
 import pkg from './package.json';
 import resolve from '@rollup/plugin-node-resolve';
-import { string } from 'rollup-plugin-string';
+import svgo from 'rollup-plugin-svgo';
 import { terser } from 'rollup-plugin-terser';
 
 /** @type {import('rollup').RollupOptions} */
@@ -21,7 +21,13 @@ const baseConfig = {
     commonjs(),
     builtins(),
     babel({ babelHelpers: 'bundled', exclude: 'node_modules/**' }),
-    string({ include: '**/*.svg' })
+    svgo({
+      plugins: [
+        { removeViewBox: false },
+        { removeDimensions: false },
+        { removeEmptyText: false }
+      ]
+    })
   ]
 };
 
