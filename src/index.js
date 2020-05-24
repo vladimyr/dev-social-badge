@@ -6,19 +6,18 @@ import xhr from 'xhr';
 const { Promise } = globalThis;
 
 const prefixUrl = 'https://dev.to';
-const reArticleId = /article-id\s*=\s*"(\d+)"/;
+const reArticleId = /article-id\s*=\s*"([^"]+)"/;
 
 [].map.call(document.querySelectorAll('devto-badge'), el => initBadge(el));
 
 export function initBadge (el) {
-  let articleId;
   const { articleUrl, target } = el.dataset;
   return getArticleId(articleUrl)
     .then(articleId => getArticleInfo(articleId))
     .then(articleInfo => createBadge({
-      articleId,
-      articleUrl,
       target,
+      articleId: articleInfo.id,
+      articleUrl: articleInfo.url,
       count: articleInfo.positive_reactions_count
     }))
     .then(badge => replace(el, badge));
