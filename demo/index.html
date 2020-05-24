@@ -4,19 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DEVto Badge demo</title>
+  <link rel="stylesheet" href="//unpkg.com/minireset.css@0.0.6/minireset.css">
+  <link rel="stylesheet" href="//unpkg.com/prismjs@1.20.0/themes/prism-solarizedlight.css">
+  <style>
+    html {
+      margin: .5rem;
+      font-size: .875rem;
+    }
+  </style>
 </head>
 <body>
 
-<pre><code>
-&lt;devto-badge data-article-url=&quot;https://dev.to/benjaminjprice/introducing-the-dev-social-badge-1bc3&quot;&gt;&lt;/devto-badge&gt;
-&lt;devto-badge data-article-url=&quot;https://dev.to/benjaminjprice/dev-social-badge-going-open-source-5am0&quot;&gt;&lt;/devto-badge&gt;
+<pre>
+<code class="language-html">&lt;body&gt;
+  &lt;devto-badge data-article-url=&quot;https://dev.to/benjaminjprice/introducing-the-dev-social-badge-1bc3&quot;&gt;&lt;/devto-badge&gt;
+  &lt;devto-badge data-article-url=&quot;https://dev.to/benjaminjprice/dev-social-badge-going-open-source-5am0&quot;&gt;&lt;/devto-badge&gt;
+  &lt;script src=&quot;src/devto-badge.js&quot;&gt;&lt;/script&gt;
+&lt;/body&gt;</code>
+</pre>
 
-&lt;script src=&quot;src/devto-badge.js&quot;&gt;&lt;/script&gt;
-</code></pre>
-
-    <devto-badge data-article-url="https://dev.to/benjaminjprice/introducing-the-dev-social-badge-1bc3"></devto-badge>
-    <devto-badge data-article-url="https://dev.to/benjaminjprice/dev-social-badge-going-open-source-5am0"></devto-badge>
-
+  <devto-badge data-article-url="https://dev.to/benjaminjprice/introducing-the-dev-social-badge-1bc3"></devto-badge>
+  <devto-badge data-article-url="https://dev.to/benjaminjprice/dev-social-badge-going-open-source-5am0"></devto-badge>
+  <script src="//unpkg.com/prismjs@1.20.0/prism.js"></script>
   <script src="/dist/devto-badge.js"></script>
 </body>
 </html>
